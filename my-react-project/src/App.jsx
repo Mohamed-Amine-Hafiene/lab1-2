@@ -1,35 +1,60 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// Step 3 
+const courseTitle = "Introduction to React";
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  // Step 2  
+  const studentName = "Mohamed Amine";
+
+  // Step 6 
+  const student = {
+    name: "Mohamed Amine",
+    age: 21,
+    track: "Business & Technology"
+  };
+
+  // Step 7
+  function sayHello() {
+    return `Hello ${studentName}, welcome back!`;
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      
+      {/* Step 2 – Display variable */}
+      <p>{studentName}</p>
+
+      {/* Step 4 – Dynamic sentence */}
+      <p>Welcome to {courseTitle}, {studentName}!</p>
+
+      {/* Step 5 – Form elements */}
+      <label htmlFor="nameInput">Enter your name:</label>
+      <input type="text" id="nameInput" />
+
+      {/* Step 6 – Display object properties */}
+      <h3>Student Info</h3>
+      <p>Name: {student.name}</p>
+      <p>Age: {student.age}</p>
+      <p>Track: {student.track}</p>
+
+      {/* Step 7 – Call function */}
+      <p>{sayHello()}</p>
+
+      {/*
+  
+
+      One thing I understand well:
+      I understand how JSX uses {} .
+
+      One thing that is still confusing:
+      The difference between props and state in larger applications.
+
+      One mistake I made and fixed:
+      I forgot to use {} .
+      */}
+
+    </div>
+  );
 }
 
-export default App
+export default App;
